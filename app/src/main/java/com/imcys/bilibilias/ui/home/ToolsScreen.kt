@@ -21,6 +21,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.BugReport
+import androidx.compose.material.icons.outlined.CalendarToday
 import androidx.compose.material.icons.outlined.CopyAll
 import androidx.compose.material.icons.outlined.VideoCameraBack
 import androidx.compose.material.icons.outlined.WebAsset
@@ -60,6 +61,7 @@ import com.imcys.bilibilias.common.utils.ASConstant.QQ_GROUP_URL
 import com.imcys.bilibilias.common.utils.DeviceInfoUtils
 import com.imcys.bilibilias.common.utils.openLink
 import com.imcys.bilibilias.ui.home.navigation.HomeRoute
+import com.imcys.bilibilias.ui.tools.calendar.CalendarRoute
 import com.imcys.bilibilias.ui.tools.donate.DonateRoute
 import com.imcys.bilibilias.ui.tools.frame.FrameExtractorRoute
 import com.imcys.bilibilias.ui.tools.parser.WebParserRoute
@@ -102,6 +104,12 @@ enum class ToolInfo(
         icon = Icons.Outlined.WebAsset,
         navKey = WebParserRoute
     ),
+    Calendar(
+        title = "追番日历",
+        desc = "快速找到本周更新的番剧视频。",
+        icon = Icons.Outlined.CalendarToday,
+        navKey = CalendarRoute
+    ),
     // 反馈问题
     Feedback(
         title = "反馈问题",
@@ -127,7 +135,8 @@ private fun ToolsContent(vm: HomeViewModel, onToPage: (NavKey) -> Unit) {
         ToolInfo.FrameExtractor
     )
     val parserTools = listOf(
-        ToolInfo.WebParser
+        ToolInfo.Calendar,
+        ToolInfo.WebParser,
     )
     val otherTools = mutableListOf(
         ToolInfo.Feedback

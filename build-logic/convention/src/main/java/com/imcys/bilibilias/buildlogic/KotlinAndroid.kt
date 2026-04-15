@@ -106,5 +106,6 @@ private inline fun <reified T : KotlinBaseExtension> Project.configureKotlin() =
              */
             "-Xconsistent-data-class-copy-visibility"
         )
+        freeCompilerArgs.add("-XXLanguage:+ContextParameters")
     }
 }

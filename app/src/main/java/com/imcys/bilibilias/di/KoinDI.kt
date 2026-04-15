@@ -30,6 +30,8 @@ import com.imcys.bilibilias.ui.setting.layout.LayoutTypesetViewModel
 import com.imcys.bilibilias.ui.setting.platform.ParsePlatformViewModel
 import com.imcys.bilibilias.ui.setting.roam.RoamViewModel
 import com.imcys.bilibilias.ui.setting.storage.StorageManagementViewModel
+import com.imcys.bilibilias.ui.tools.calendar.CalendarViewModel
+import com.imcys.bilibilias.ui.tools.calendar.detail.SubjectDetailViewModel
 import com.imcys.bilibilias.ui.tools.donate.DonateViewModel
 import com.imcys.bilibilias.ui.tools.frame.FrameExtractorViewModel
 import com.imcys.bilibilias.ui.tools.parser.WebParserViewModel
@@ -79,6 +81,8 @@ val appModule = module {
     viewModelOf(::LineConfigViewModel)
     viewModelOf(::WebParserViewModel)
     viewModelOf(::ParsePlatformViewModel)
+    viewModelOf(::CalendarViewModel)
+    viewModelOf(::SubjectDetailViewModel)
 
     single { VideoInfoFetcher(get(), get(), get()) }
     single { FileOutputManager(androidApplication()) }

@@ -13,6 +13,7 @@ import com.imcys.bilibilias.network.plugin.RoamPlugin
 import com.imcys.bilibilias.network.service.AppAPIService
 import com.imcys.bilibilias.network.service.BILIBILITVAPIService
 import com.imcys.bilibilias.network.service.BILIBILIWebAPIService
+import com.imcys.bilibilias.network.service.BgmAPIService
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.BrowserUserAgent
@@ -187,5 +188,9 @@ val netWorkModule = module {
     // AppAPI
     single {
         AppAPIService(get())
+    }
+    // BgmAPI
+    single {
+        BgmAPIService(get())
     }
 }
